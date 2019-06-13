@@ -17,7 +17,6 @@ public class CustomerTest {
 	public void testStatement1() {
 		me.addRental(r1);
 		me.addRental(r2);
-		//fail("Not yet implemented");
 		String output1 = "Rental Record for Nadir\r\n" + 
 				"	Spancer	33.5\r\n" + 
 				"	Speed	12.0";
@@ -32,5 +31,40 @@ public class CustomerTest {
 	 * strategy basics i.e. input partition etc
 	 */
 	
+	/**
+	 * Test 2 1 Customer rented one movie 1 REGULAR
+	 */
+	@Test
+	public void testStatement2() {
+		
+		me2.addRental(r1);
+		me2.addRental(r2);
+		String output2 = "Rental Record for Allah Ditta\r\n" + 
+				"	Blood Diamond 1.5";
+		if(output2.equals(me2.statement()))
+		{
+			assert true;
+		}
+		
+	}
+	
+	/**
+	 * Test 3 2 Customer rented 2 movies 1 REGULAR and 1 NEW_RELEASE
+	 */
+	@Test
+	public void testStatement3() {
+		
+		me2.addRental(r1);
+		me2.addRental(r2);
+		String output3 = "Rental Record for Allah Ditta\r\n" + 
+				"					Spancer	33.5\r\n" + 
+				"					Speed	12.0";
+		if(output3.equals(me2.statement()))
+		{
+			assert true;
+		}
+		
+		
+	}
 
 }
